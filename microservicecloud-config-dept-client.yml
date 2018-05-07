@@ -10,7 +10,7 @@ spring:
    profiles: dev
     
    application:
-    name: microservicecloud-dept 
+    name: microservicecloud-config-dept-client
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -27,17 +27,17 @@ mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
   type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
     
 
       
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
-       defaultZone: http://localhost:7001/eureka #单机
+       defaultZone: http://eureka7001.com:7001/eureka #单机
    
   instance:
-    instance-id: microservicecloud-dept8001
+    instance-id: dept-8001.com
     prefer-ip-address: true #访问路径可以显示IP地址 
     
 info:
@@ -53,7 +53,7 @@ spring:
    profiles: test
     
    application:
-    name: microservicecloud-dept 
+    name: microservicecloud-config-dept-client 
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -77,10 +77,10 @@ mybatis:
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
-       defaultZone: http://localhost:7001/eureka #单机
+       defaultZone: http://eureka7001.com:7001/eureka #单机
    
   instance:
-    instance-id: microservicecloud-dept8001
+    instance-id: dept-8001.com
     prefer-ip-address: true #访问路径可以显示IP地址   
 
 info:
